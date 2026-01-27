@@ -245,7 +245,7 @@ $ python3 —-version
     To do this, use the global command: 
     
     ```none
-    pyenv global 3.12
+    $ pyenv global 3.12
     ````
 
     :::{note}
@@ -261,20 +261,20 @@ When managing your environment, you may need to remove old versions. Let’s lea
    Remove the local configuration from your project folder: 
 
    ```none
-   pyenv local system  
+   $ pyenv local system  
    ```
 2. Uninstall the Version
 
    Remove Python 3.12 from pyenv: 
 
    ```none
-   pyenv uninstall 3.12.9 
+   $ pyenv uninstall 3.12.9 
    ```
    Type y when prompted to confirm. 
 3. Verify removal:
 
    ```none
-   pyenv versions 
+   $ pyenv versions 
    ```
 
    You should see only the system version listed. 
