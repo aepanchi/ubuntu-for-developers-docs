@@ -178,12 +178,11 @@ To illustrate `pyenv` usage, let’s install Python 3.12 alongside your system�
 
 2. Install Python 3.12 (this will fetch the latest `3.12.x` release):
 
-	```none
-    $ pyenv install 3.12
-	```
+	```{terminal}
+    :user: dev
+    :host: ubuntu
+    :input: pyenv install 3.12
 
-	Expected output:
-    ```{terminal}
     Downloading Python-3.12.9.tar.xz...
 	-> https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tar.xz
 	Installing Python-3.12.9...
@@ -215,27 +214,27 @@ $ python3 —-version
 
 2. Verify that Python versions are switched: 
 
-   ```none
-   $ pyenv versions
-   ```
- 
-   Expected output: 
-
    ```{terminal}
-   system * 3.12.9 (set by /home/ubuntu/my-python-project/.python-version)
-   ```
+    :dir: ~/my-python-project
+    :user: dev
+    :host: ubuntu
+    :input: pyenv versions
+
+    system 
+    * 3.12.9 (set by /home/ubuntu/my-python-project/.python-version)
+    ```
 
    The asterisk (*) confirms that Python 3.12 is now active. 
 
 3. Check the binary path to be sure:
-	
-    ```none
-    $ pyenv which python3
-    ````
+   
+   ```{terminal}
+    :dir: ~/my-python-project
+    :user: dev
+    :host: ubuntu
+    :input: pyenv which python3
 
-    Expected output: 
-    ```{terminal}
-    /home/ubuntu/.pyenv/versions/3.12.9/bin/python3
+    home/ubuntu/.pyenv/versions/3.12.9/bin/python3
     ```
 
 4. (Optional) Change Your Global Default
@@ -249,7 +248,7 @@ $ python3 —-version
     ````
 
     :::{note}
-    This overrides the system Python for your user account, but it leaves the operating system's Python untouched for root processes (which keeps your system stable). To revert to the system default later, run pyenv global system.
+    This overrides the system Python for your user account, but it leaves the operating system's Python untouched for root processes (which keeps your system stable). To revert to the system default later, run `pyenv global system`.
     :::
 
 **Step 4: Uninstall**

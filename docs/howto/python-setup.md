@@ -65,19 +65,23 @@ To enable pyenv, complete the following steps:
 
     To ensure pyenv works reliably in all environments, configure both your interactive shell (`~/.bashrc`) and your login shell (`~/.profile`). 
 
-    Run the following commands to append necessary configurations to your interactive and login shells: 
+    Run the following commands to append necessary configurations to your:
+    
+    * interactive shell
+    
+      ```{code-block} bash
+      echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+      echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+      echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
+      ```
+      
+    * login shells
 
-    ```{terminal} 
-    # 1. Add to ~/.bashrc (Interactive shells)
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
-
-    # 2. Add to ~/.profile (Login shells)
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-    echo 'eval "$(pyenv init -)"' >> ~/.profile
-    ```
+      ```{code-block} bash
+      echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+      echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+      echo 'eval "$(pyenv init -)"' >> ~/.profile
+      ```
    
     :::{note} 
     Refer to the upstream documentation for [instructions on other shell environments configuration](https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv). 
