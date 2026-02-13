@@ -161,12 +161,13 @@ To illustrate the installation of a dependency confined to the Python virtual en
     Hello, world!
     ```
 
-## Managing Python versions 
+
+## Managing Python versions
 
 :::{note} Make sure that pyenv is active on your system. Refer to {ref}`install-python` to learn how to do it. 
 :::
 
-**Step 1: Install a Specific Python Version**
+**Step 1: Install a specific Python version**
 
 To illustrate `pyenv` usage, let’s install Python 3.12 alongside your system’s default Python. 
 
@@ -176,7 +177,7 @@ To illustrate `pyenv` usage, let’s install Python 3.12 alongside your system�
      $ pyenv install --list
      ```
 
-2. Install Python 3.12 (this will fetch the latest `3.12.x` release):
+2. Install Python 3.12 (this fetches the latest `3.12.x` release):
 
 	```{terminal}
     :user: dev
@@ -189,20 +190,24 @@ To illustrate `pyenv` usage, let’s install Python 3.12 alongside your system�
 	Installed Python-3.12.9 to /home/ubuntu/.pyenv/versions/3.12.9
     ```
 
-**Step 2: Create a Test Workspace**  
+**Step 2: Create a test workspace**  
 
-Create a specific directory to understand how pyenv switches version automatically:
+Create a specific directory to understand how `pyenv` switches version automatically:
 
 ```none
 $ mkdir -p ~/my-python-project
 $ cd ~/my-python-project
 ```
 
-If you check the python versions, it is still your system default: 
+If you check the Python version, it is still your system default: 
 
-```none
-$ python3 —-version
-```
+   ```{terminal}
+   :dir: ~/my-python-project
+   :user: dev
+   :host: ubuntu
+   :input: python3 --version
+   
+   Python 3.13.7
 
 **Step 3: Activate the Local Version**
 
@@ -239,9 +244,9 @@ $ python3 —-version
 
 4. (Optional) Change Your Global Default
 
-    While local sets the version for a specific folder, you might sometimes want to change the Python version for your entire user account (every terminal you open).
+    While the `local` command sets the version for a specific folder, you might sometimes want to change the Python version for your entire user account (every terminal you open).
     
-    To do this, use the global command: 
+    To do this, use the `global` command: 
     
     ```none
     $ pyenv global 3.12
@@ -255,28 +260,32 @@ $ python3 —-version
 
 When managing your environment, you may need to remove old versions. Let’s learn how to uninstall the version we just added. 
 
-1. Revert to System Python
+1. Revert to system Python
    
    Remove the local configuration from your project folder: 
 
    ```none
    $ pyenv local system  
    ```
-2. Uninstall the Version
+
+2. Uninstall the version
 
    Remove Python 3.12 from pyenv: 
 
    ```none
    $ pyenv uninstall 3.12.9 
    ```
-   Type y when prompted to confirm. 
+   Type {kbd}`y` when prompted to confirm. 
+
 3. Verify removal:
 
-   ```none
-   $ pyenv versions 
-   ```
+   ```{terminal}
+   :dir: ~/my-python-project
+   :user: dev
+   :host: ubuntu
+   :input: pyenv versions
 
-   You should see only the system version listed. 
+   system 
 
 
 ## Improving Python code with the help of tooling
