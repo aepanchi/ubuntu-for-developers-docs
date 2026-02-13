@@ -47,7 +47,7 @@ sudo apt install -y python3-pip python3-pip-whl
 
 ## Managing multiple Python versions with pyenv
 
-To use multiple Python versions on the same system and switch between them, you can use pyenv. It allows you to set specific Python versions for projects or change the global Python version without interfering with the system python. 
+To use multiple Python versions on the same system and switch between them, you can use [pyenv](https://github.com/pyenv/pyenv). It allows you to set specific Python versions for projects or change the global Python version without interfering with the system Python. 
 
 To enable pyenv, complete the following steps:    
 
