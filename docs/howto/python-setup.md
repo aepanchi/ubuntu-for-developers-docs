@@ -37,12 +37,42 @@ Python 3 is the default, and Python 2 is no longer officially supported on Ubunt
 
 Numerous Ubuntu system tools make use of the system Python installation. To avoid interfering with this setup and isolate project dependencies, use virtual environments for development and testing.
 
-While the system installation uses Python modules packaged as `.deb` packages that are available from system repositories, for installing dependencies within Python virtual environments, use the {command}`pip` Python package manager.
+To ensure system stability while providing flexibility for development, Ubuntu follows PEP 668 standards. This means you should choose your installation method based on your specific goal. Refer to the following table to choose the right tool for your goal:
 
-Install with:
+```{list-table}
+   :header-rows: 1
+
+* - Your Goal
+  - Recommended Package Manager
+  - Description
+  - Command Example
+* - I need a tool available system-wide
+  - `apt`
+  - - Stable and optimized
+    - Provides pre-compiled binaries to avoid long compile times (important for ARM/RaspPi)
+  - `sudo apt install python3-pandas`
+* - I write code for a specific project
+  - `pip`+ `venv`
+  - - The standard for development
+    - Creates a separate folder (`.venv`) for dependencies.
+    - Prevents `externally-managed-environment` errors.
+  - 1. `python3 -m venv .venv`
+    2. `source .venv/bin/activate`
+    3. `pip install pandas` 
+* - I need a global CLI tool
+  - `pipx`
+  - Installs the tool in an isolated environment but links the binary globally
+  - `pipx install black`
+```
+
+To install `pip`and `pipx`, run: 
 
 ```none
-sudo apt install -y python3-pip python3-pip-whl
+   # Install pip and pipx
+   sudo apt install -y python3-pip python3-venv pipx
+
+   # Ensure pipx is in your path 
+   pipx ensurepath
 ```
 
 ## Managing multiple Python versions with pyenv
