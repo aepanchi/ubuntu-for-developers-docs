@@ -85,9 +85,7 @@ To enable pyenv, complete the following steps:
     Refer to the upstream documentation for [instructions on other shell environments configuration](https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv). 
     :::
 
-3. Restart Your Shell
-	 
-   For the changes to the PATH to work immediately, restart your shell: 
+3. For the changes to the `PATH` to work immediately, restart your shell: 
 
 	 ```none 
    exec "$SHELL"
