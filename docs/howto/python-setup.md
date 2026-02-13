@@ -61,9 +61,7 @@ To enable pyenv, complete the following steps:
    sudo apt install pyenv
    ```
 
-2. Configure Shell Environment
-
-    To ensure pyenv works reliably in all environments, configure both your interactive shell (`~/.bashrc`) and your login shell (`~/.profile`). 
+2. Configure the shell environment. To ensure pyenv works reliably in all environments, configure both your interactive shell (`~/.bashrc`) and your login shell (`~/.profile`). 
 
     Add the following lines to the respective shell configuration files:
     
