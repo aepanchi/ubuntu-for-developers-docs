@@ -87,7 +87,7 @@ To enable pyenv, complete the following steps:
 
 3. For the changes to the `PATH` to work immediately, restart your shell: 
 
-	 ```none 
+   ```none 
    exec "$SHELL"
    ```
 
